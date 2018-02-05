@@ -1,4 +1,0 @@
-
-
-circle_funcs.o: cirlce_funcs.cpp
-	g++ -c cir
