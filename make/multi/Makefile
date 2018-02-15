@@ -1,6 +1,7 @@
-
+CXXFLAGS=-std=c++14
+LDFLAGS=-lm
 main: main.o circle_funcs.o
-	g++ -o main main.o circle_funcs.o
+	g++ $(LDFLAGS)  $(CXXFLAGS) -o main main.o circle_funcs.o
 
 main.o: main.cpp circle_funcs.h
 	g++ -c main.cpp
