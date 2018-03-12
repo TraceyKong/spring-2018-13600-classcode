@@ -1,7 +1,6 @@
-
 #include <iostream>
 #include <vector>
-
+#include "doctest.h"
 using namespace std;
 
 // Computes the number of digits in num
@@ -18,25 +17,10 @@ int numDigits(int number) {
 }
 
 
-int main() {
-
-    // Printing a sequence of numbers and reporting
-    // the number of digits in them
-
-    int n = 110;
-    int digits;
-
-    while (n < 100000) {
-
-        digits = numDigits(n);
-
-        cout << n;
-        cout << " ";
-        cout << digits;
-        cout << endl;
-
-        n = n * 3 + n/10;
-    }
-
-    return 0;
+TEST_CASE("testing"){
+  int i;
+  for (i = 1000; i < 10000; ++i) {
+    CHECK_MESSAGE(numDigits(i)==4,"i was "<<i);  
+  }
+  
 }
